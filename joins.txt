@@ -1,0 +1,34 @@
+<------using inner join--------->
+
+
+SELECT Customers.Name, Orders.Product
+FROM Customers
+INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+
+
+<-------using left join---------->
+
+
+SELECT Customers.Name, Orders.Product
+FROM Customers
+LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+
+<--------using right join---------->
+
+
+SELECT Customers.Name, Orders.Product
+FROM Customers
+RIGHT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+
+<------- Full outer join--------->
+
+
+SELECT Customers.Name, Orders.Product
+FROM Customers
+LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+
+UNION
+
+SELECT Customers.Name, Orders.Product
+FROM Orders
+LEFT JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
